@@ -183,3 +183,4 @@ while True:
                     turn = 'player'
 
     if not playAgain():
+        break

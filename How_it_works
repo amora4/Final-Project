@@ -1,0 +1,28 @@
+How game works
+Introductory statement
+“Welcome to our tic tac toe game!”
+(do we need this presenter before us had this)“To start enter player’s names”
+(do we need this presenter before us had this)Have a place to type in players names
+“Player 1(or their name) would you like to play x or o?”
+Have a place for them to type either x or o
+(i think this would be the most user friendly way to play the board)“in our version of tic tac toe there will be numbers in the top left corner of each square. remember to type the number in the top left of the square you want to play in”
+Who goes first
+Player x always go first
+“Player (1 or 2)(or their name) you go first“
+Board design
+1  |2  |3
+   |   |
+   |   |
+-----------
+4  |5  |6
+   |   |
+   |   |
+-----------
+7  |8  |9
+   |   |
+   |   |
+“What is your move player()?” input()
+Board repeats along with move message for next player
+Ending statement
+“player() wins!” or “its a tie!”
+
