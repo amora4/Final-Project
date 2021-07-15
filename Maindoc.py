@@ -22,7 +22,7 @@ def inputPlayerLetter():
     # Returns a list with the player's letter as the first item, and the computer's letter as the second.
     letter = ''
     while not (letter == 'X' or letter == 'O'):
-        print('Do you want to be X or O?')
+        print('Do you want to be A or B?')
         letter = input().upper()
 
     # the first element in the tuple is the player's letter, the second is the computer's letter.
