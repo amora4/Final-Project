@@ -113,9 +113,21 @@ def isBoardFull(board):
             return False
     return True
 
+def showInstructions():
+    print('''Instructions:
+This is played with 2 people''')
+    time.sleep(2)
+    print('''You choose to be X or O''')
+    time.sleep(2)
+    print('''You can tie in this game \n
+Press enter to continue...''')
+    input()
 
 print('Welcome to Tic Tac Toe!')
 print('')
+print('Would you like to view the instructions? (yes/no)')
+if input().lower().startswith('y'):
+    showInstructions()
 
 while True:
     # Reset the board
