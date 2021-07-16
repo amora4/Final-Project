@@ -6,7 +6,7 @@ def drawBoard(board):
 
     # "board" is a list of 10 strings representing the board (ignore index 0)
     # top left corner has each number for the play
-    print('1  |2  |3')
+    print('7  |8  |9')
     print(' ' + board[7] + ' | ' + board[8] + ' | ' + board[9])
     print('   |   |')
     print('-----------')
@@ -14,7 +14,7 @@ def drawBoard(board):
     print(' ' + board[4] + ' | ' + board[5] + ' | ' + board[6])
     print('   |   |')
     print('-----------')
-    print('7  |8  |9')
+    print('1  |2  |3')
     print(' ' + board[1] + ' | ' + board[2] + ' | ' + board[3])
     print('   |   |')
 
@@ -25,16 +25,16 @@ def inputPlayerLetter():
     while not (letter == 'X' or letter == 'O'):
         print('player1 choose X or O?')
         letter = input().upper()
-        if letter == 'X':
-          print('player1 is X')
-          print('player2 is O')
-          print('')
-          return ['X', 'O']
-        else:
+    if letter == 'O':
           print('player1 is O')
-          print('player2 will be X')
+          print('player2 is X')
           print('')
           return ['O', 'X']
+    elif letter == 'X':
+          print('player1 is X')
+          print('player2 will be O')
+          print('')
+          return ['X', 'O']
 
 
 def whoGoesFirst():
@@ -81,6 +81,7 @@ def getPlayer1Move(board):
     # Let the player type in his move.
     move = ' '
     while move not in '1 2 3 4 5 6 7 8 9'.split() or not isSpaceFree(board, int(move)):
+        print('')
         print('player1 what is your next move? (1-9)')
         move = input()
     return int(move)
@@ -89,6 +90,7 @@ def getPlayer2Move(board):
     # Let the player type in his move.
     move = ' '
     while move not in '1 2 3 4 5 6 7 8 9'.split() or not isSpaceFree(board, int(move)):
+        print('')
         print('player2 what is your next move? (1-9)')
         move = input()
     return int(move)
@@ -139,7 +141,7 @@ while True:
 
     while gameIsPlaying:
         if turn == 'player1':
-            # Player's turn.
+            # Player1s turn.
             drawBoard(theBoard)
             move = getPlayer1Move(theBoard)
             makeMove(theBoard, player1Letter, move)
@@ -150,17 +152,18 @@ while True:
                 gameIsPlaying = False
             else:
                 if isBoardFull(theBoard):
+                    print('theBoard=',theBoard)
                     drawBoard(theBoard)
                     print('The game is a tie!')
                     break
                 else:
-                    turn = 'player1'
+                    turn = 'player2'
 
-        else:
-            # Computer's turn.
+        elif turn == 'player2':
+            # Player2s turn.
             drawBoard(theBoard)
             move = getPlayer2Move(theBoard)
-            makeMove(theBoard, player1Letter, move)
+            makeMove(theBoard, player2Letter, move)
 
             if isWinner(theBoard, player2Letter):
                 drawBoard(theBoard)
@@ -168,6 +171,7 @@ while True:
                 gameIsPlaying = False
             else:
                 if isBoardFull(theBoard):
+                    print('theBoard=',theBoard)
                     drawBoard(theBoard)
                     print('The game is a tie!')
                     break
