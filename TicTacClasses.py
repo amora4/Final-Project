@@ -1,5 +1,6 @@
 import random
 import time
+import libs
 
 class Player:
     def __init__(self, playernumber):
